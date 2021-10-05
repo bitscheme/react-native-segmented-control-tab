@@ -60,11 +60,7 @@ const handleTabPress = (
   selectedIndex: number,
   onTabPress: Function,
 ) => {
-  if (multiple) {
-    onTabPress(index)
-  } else if (selectedIndex !== index) {
-    onTabPress(index)
-  }
+  onTabPress(index)
 }
 
 const getAccessibilityLabelByIndex = (
