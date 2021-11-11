@@ -87,6 +87,7 @@ export default class SegmentedControlTab extends PureComponent<Props> {
     selectedIndex: 0,
     selectedIndices: [0],
     onTabPress: () => {},
+    onLongTabPress: () => {},
     tabsContainerStyle: {},
     tabsContainerDisableStyle: { opacity: 0.6 },
     tabStyle: {},
@@ -128,6 +129,7 @@ export default class SegmentedControlTab extends PureComponent<Props> {
       tabBadgeStyle,
       activeTabBadgeStyle,
       onTabPress,
+      onLongTabPress,
       textNumberOfLines,
       allowFontScaling,
       accessible,
@@ -174,8 +176,7 @@ export default class SegmentedControlTab extends PureComponent<Props> {
               text={item}
               component={item}
               textNumberOfLines={textNumberOfLines}
-              onTabPress={indexs => handleTabPress(indexs, multiple, selectedIndex, onTabPress)
-              }
+              onTabPress={i => onTabPress(i)}
               onLongTabPress={i => onLongTabPress(i)}
               firstTabStyle={
                 index === 0 ? [{ borderRightWidth: 0 }, firstTabStyleDefault, firstTabStyle] : {}
