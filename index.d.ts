@@ -41,6 +41,8 @@ export interface SegmentedControlTabProperties extends React.Props<ReactNativeSe
     activeTabBadgeStyle?: StyleProp<TextStyle>
     // Default  call-back function when a tab is selected
     onTabPress?: (index: number) => void
+    // Default  callback function when tab is long pressed
+    onLongTabPress?: (index: number) => void
     // Default  true;whether the segment & badge text should allow font scaling (default matches React Native default)
     allowFontScaling?: boolean
     // Default  true;enables accessibility for each tab

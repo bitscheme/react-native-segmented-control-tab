@@ -31,6 +31,7 @@ type Props = {
   tabBadgeStyle?: TextStyleProp,
   activeTabBadgeStyle?: TextStyleProp,
   onTabPress: Function,
+  onLongTabPress: Function,
   textNumberOfLines?: number,
   allowFontScaling?: boolean,
   accessible?: boolean,
@@ -101,6 +102,7 @@ export default class TabOption extends PureComponent<Props> {
     accessibilityLabel: '',
     enabled: false,
     onTabPress: () => {},
+    onLongTabPress: () => {}
   };
 
   render() {
@@ -121,6 +123,7 @@ export default class TabOption extends PureComponent<Props> {
       tabBadgeStyle,
       activeTabBadgeStyle,
       onTabPress,
+      onLongTabPress,
       textNumberOfLines,
       allowFontScaling,
       accessible,
@@ -142,6 +145,7 @@ export default class TabOption extends PureComponent<Props> {
         accessibilityTraits={isTabActive ? 'selected' : 'button'}
         accessibilityComponentType="button"
         onPress={() => onTabPress(index)}
+        onLongPress={() => onLongTabPress(index)}
         disabled={!enabled}
         activeOpacity={activeTabOpacity}
       >

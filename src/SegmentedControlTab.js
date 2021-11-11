@@ -23,6 +23,7 @@ type Props = {
   tabBadgeStyle: TextStyleProp,
   activeTabBadgeStyle: TextStyleProp,
   onTabPress: Function,
+  onLongTabPress: Function,
   textNumberOfLines: number,
   allowFontScaling: boolean,
   accessible: boolean,
@@ -175,6 +176,7 @@ export default class SegmentedControlTab extends PureComponent<Props> {
               textNumberOfLines={textNumberOfLines}
               onTabPress={indexs => handleTabPress(indexs, multiple, selectedIndex, onTabPress)
               }
+              onLongTabPress={i => onLongTabPress(i)}
               firstTabStyle={
                 index === 0 ? [{ borderRightWidth: 0 }, firstTabStyleDefault, firstTabStyle] : {}
               }
